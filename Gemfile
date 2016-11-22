@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.6'
-gem 'mysql2', '>= 0.3.13', '< 0.5'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -25,6 +24,15 @@ gem "private_pub"
 gem "thin"
 gem 'ransack'
 # gem 'eventmachine', '~>1.0.4'
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
+group :development, :test do
+  gem 'mysql2', '>= 0.3.13', '< 0.5'
+end
 
 group :development, :test do
   gem 'byebug'
